@@ -9,13 +9,16 @@ https://www.python.org/ftp/python/3.7.4/python-3.7.4.exe
 
 Rode os comandos abaixo no console/terminal:
 ```
-sudo apt install python3-pip
+$ sudo apt install python3-pip
 
-sudo pip install pipenv
+$ sudo pip install pipenv
+```
 
-pipenv install
+Após baixar o projeto, acesse a pasta do mesmo e execute os comandos abaixo:
+```
+$ pipenv install
 
-pipenv shell
+$ pipenv shell
 ```
 
 Crie um usuário e senha para logar no Django Admin:
@@ -31,3 +34,10 @@ python manage.py runserver
 Acesse no navegador a url: http://localhost:8000
 
 Depois tente acessar e logar no Django Admin com o usuário e senha criado acima: http://localhost:8000/admin/
+
+A documentação do projeto se encontra em: http://localhost:8000/docs
+
+### Orientação
+
+Cada app deve seguir o seguinte formato:
+
