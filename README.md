@@ -41,4 +41,5 @@ A documentação do projeto se encontra em: http://localhost:8000/docs
 
 Cada app deve seguir o seguinte formato:
 
-https://user-images.githubusercontent.com/5925134/67646698-1fce8f80-f90e-11e9-9fd9-4b02f30a712a.png
+![Captura de tela de 2019-10-27 22-56-44](https://user-images.githubusercontent.com/5925134/67646698-1fce8f80-f90e-11e9-9fd9-4b02f30a712a.png)
+
