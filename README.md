@@ -3,7 +3,9 @@
 Instalação do python no windows:
 
 https://python.org.br/instalacao-windows/
+
 https://www.python.org/downloads/release/python-374/
+
 https://www.python.org/ftp/python/3.7.4/python-3.7.4.exe
 
 
