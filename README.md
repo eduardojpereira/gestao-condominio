@@ -45,3 +45,9 @@ Cada app deve seguir o seguinte formato:
 
 ![Captura de tela de 2019-10-27 22-56-44](https://user-images.githubusercontent.com/5925134/67646698-1fce8f80-f90e-11e9-9fd9-4b02f30a712a.png)
 
+Para criar um app como o do exemplo acima, basta execupar o seguinte comando (Troque a palavra 'apartamento' pelo nome do seu app):
+
+```
+$ django-admin startapp apartamento
+```
+
