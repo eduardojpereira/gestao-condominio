@@ -22,5 +22,6 @@ urlpatterns = [
     path('docs/', include_docs_urls(title='Gestão de Condomínio',
                                     authentication_classes=[],
                                     permission_classes=[])),
-    path('v1/apartamentos', include('apartamento.urls'))
+    path('v1/apartamentos', include('apartamento.urls')),
+    path('v1/condominios', include('condominio.urls'))
 ]

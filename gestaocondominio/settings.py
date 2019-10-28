@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
 
+    'condominio.apps.CondominioConfig',
     'apartamento.apps.ApartamentoConfig'
 ]
 
