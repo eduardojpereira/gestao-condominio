@@ -1,10 +1,14 @@
 from django.db import models
 
+from bloco.models import Bloco
+
+
 class Apartamento(models.Model):
 
     id = models.AutoField(primary_key=True)
-    bloco = models.IntegerField()
+    bloco = models.ForeignKey(Bloco, on_delete=models.CASCADE)
     numero = models.IntegerField()
+    esta_disponivel = models.BooleanField(default=False)
 
     class Meta:
         db_table = 'apartamento'

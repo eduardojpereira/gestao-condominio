@@ -28,8 +28,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,8 +41,11 @@ INSTALLED_APPS = [
     'condominio.apps.CondominioConfig',
     'apartamento.apps.ApartamentoConfig',
 	'usuario.apps.UsuarioConfig',
-	'leitor.apps.LeitorConfig'
+	'leitor.apps.LeitorConfig',
+    'bloco.apps.BlocoConfig'
 ]
+# Application definition
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
