@@ -15,9 +15,4 @@ class Usuario(models.Model):
         db_table = 'usuario'
 
     def __str__(self):
-        return 'Nome: ' + str(self.nome) + 'Sobrenome: ' \
-               + str(self.sobrenome) + 'Cpf: ' + str(self.cpf) \
-               + 'E-mail: ' + str(self.email) + 'Telefone: ' \
-               + str(self.telefone) + 'Data de início da moradia: ' \
-               + str(self.data_inicio_moradia) + 'Data de término da moradia: ' \
-               + str(self.data_fim_moradia) + 'Status: ' + str(self.status)
+        return 'Nome: ' + str(self.nome)
