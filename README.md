@@ -1,6 +1,17 @@
 # Gestão de Condominios
 
-Instalação do python no windows:
+## Linux
+
+Rode os comandos abaixo no console/terminal:
+```
+$ sudo apt install python3-pip
+
+$ sudo pip install pipenv
+```
+
+## Windows
+
+Para instalar o Python:
 
 https://python.org.br/instalacao-windows/
 
@@ -8,12 +19,19 @@ https://www.python.org/downloads/release/python-374/
 
 https://www.python.org/ftp/python/3.7.4/python-3.7.4.exe
 
+Para instalar o Pip:
 
-Rode os comandos abaixo no console/terminal:
+https://dicasdepython.com.br/resolvido-pip-nao-e-reconhecido-como-um-comando-interno/
+
+Para instalar o Pipenv:
+
+https://medium.com/@mahmudahsan/how-to-use-python-pipenv-in-mac-and-windows-1c6dc87b403e
+
+## Configurando o projeto
+
+Baixe o projeto:
 ```
-$ sudo apt install python3-pip
-
-$ sudo pip install pipenv
+$ git clone git@github.com:eduardojpereira/gestao-condominio.git
 ```
 
 Após baixar o projeto, acesse a pasta do mesmo e execute os comandos abaixo:
