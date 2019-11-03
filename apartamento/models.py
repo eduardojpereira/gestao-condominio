@@ -1,7 +1,5 @@
 from django.db import models
 
-from bloco.models import Bloco
-
 
 class Apartamento(models.Model):
 
