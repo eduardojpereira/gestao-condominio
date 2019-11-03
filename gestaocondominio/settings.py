@@ -41,7 +41,9 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'condominio.apps.CondominioConfig',
-    'apartamento.apps.ApartamentoConfig'
+    'apartamento.apps.ApartamentoConfig',
+	'usuario.apps.UsuarioConfig',
+	'leitor.apps.LeitorConfig'
 ]
 
 MIDDLEWARE = [
