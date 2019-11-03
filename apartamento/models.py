@@ -3,8 +3,9 @@ from django.db import models
 class Apartamento(models.Model):
 
     id = models.AutoField(primary_key=True)
-    bloco = models.IntegerField()
+    bloco = models.ForeignKey('bloco.Bloco', on_delete=models.CASCADE)
     numero = models.IntegerField()
+    esta_disponivel = models.BooleanField(default=False)
 
     class Meta:
         db_table = 'apartamento'
