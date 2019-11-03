@@ -7,7 +7,7 @@ class LeitorResponseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Leitor
-        fields = 'identificador'
+        fields = ('identificador', )
 
 
 class LeitorInputSerializer(serializers.Serializer):
