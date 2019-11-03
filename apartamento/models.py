@@ -6,7 +6,7 @@ from bloco.models import Bloco
 class Apartamento(models.Model):
 
     id = models.AutoField(primary_key=True)
-    bloco = models.ForeignKey(Bloco, on_delete=models.CASCADE)
+    bloco = models.ForeignKey('bloco.Bloco', on_delete=models.CASCADE)
     numero = models.IntegerField()
     esta_disponivel = models.BooleanField(default=False)
 
