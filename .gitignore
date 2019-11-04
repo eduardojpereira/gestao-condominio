@@ -1,2 +1,13 @@
 .idea
 .venv
+*.egg-info
+*.pot
+*.py[co]
+*.orig
+*.mo
+.coverage
+__pycache__
+__pycache__/
+/.idea/
+/htmlcov/
+gestaocondominio/static/
