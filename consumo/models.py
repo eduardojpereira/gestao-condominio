@@ -11,6 +11,7 @@ class Consumo(models.Model):
     leitura_anterior = models.DecimalField(max_digits=11, decimal_places=2)
     data_leitura_atual = models.DateField()
     data_leitura_anterior = models.DateField()
+    periodo_leitura = models.IntegerField()
     consumo_atual = models.DecimalField(max_digits=11, decimal_places=2)
     valor_gas = models.DecimalField(max_digits=11, decimal_places=2)
     valor_pagamento = models.DecimalField(max_digits=11, decimal_places=2)

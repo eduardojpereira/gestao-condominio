@@ -41,13 +41,6 @@ $ pipenv install
 $ pipenv shell
 ```
 
-Instalar requerimentos:
-
-```
-pip install -r requeriments.txt
-```
-
-
 Crie um usuário e senha para logar no Django Admin:
 ```
 python manage.py createsuperuser
