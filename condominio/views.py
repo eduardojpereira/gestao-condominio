@@ -26,3 +26,34 @@ class CondominioView(GenericAPIView):
         result = {'data': 'Condomínio inserido com sucesso'}
 
         return Response(result)
+
+class CondominioViewId(GenericAPIView):
+
+    serializer_class = CondominioInputSerializer
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.service = CondominioService()
+
+    def put(self, request, condominio_id):
+        params = request.data.copy()
+        params['id'] = condominio_id
+        self.service.update(params)
+
+        result = {'data': 'Condomínio atualizado com sucesso'}
+
+        return Response(result)
+
+    def delete(self, request, condominio_id):
+        self.service.delete(condominio_id)
+
+        result = {'data': 'Condomínio deletado com sucesso'}
+
+        return Response(result)
+
+    def get(self, request, condominio_id):
+        data = self.service.find_by_id(condominio_id)
+
+        serializer = CondominioResponseSerializer(data)
+
+        return Response(serializer.data)
