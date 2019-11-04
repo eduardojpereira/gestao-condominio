@@ -29,7 +29,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,7 +42,9 @@ INSTALLED_APPS = [
     'condominio.apps.CondominioConfig',
     'apartamento.apps.ApartamentoConfig',
     'bloco.apps.BlocoConfig',
-    'consumo.apps.ConsumoConfig'
+    'consumo.apps.ConsumoConfig',
+    'usuario.apps.UsuarioConfig',
+    'leitor.apps.LeitorConfig',
 ]
 
 MIDDLEWARE = [
