@@ -1,4 +1,3 @@
-.idea
 *.egg-info
 *.pot
 *.py[co]
@@ -9,3 +8,4 @@ __pycache__
 __pycache__/
 /.idea/
 /htmlcov/
+gestaocondominio/static/
