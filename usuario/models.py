@@ -10,6 +10,7 @@ class Usuario(models.Model):
     data_inicio_moradia = models.DateField()
     data_fim_moradia = models.DateField()
     status = models.BooleanField()
+	apartamento = models.ForeignKey('apartamento.Apartamento', on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'usuario'
