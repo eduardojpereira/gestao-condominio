@@ -42,7 +42,8 @@ INSTALLED_APPS = [
 
     'condominio.apps.CondominioConfig',
     'apartamento.apps.ApartamentoConfig',
-    'bloco.apps.BlocoConfig'
+    'bloco.apps.BlocoConfig',
+    'consumo.apps.ConsumoConfig'
 ]
 
 MIDDLEWARE = [

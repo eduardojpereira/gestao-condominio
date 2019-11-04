@@ -1,7 +1,7 @@
 from consumo.models import Consumo
 
 
-class ConsumoService():
+class ConsumoService:
 
     def find(self):
         return Consumo.objects.all()

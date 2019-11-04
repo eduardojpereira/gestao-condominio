@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from consumo.models import Consumo
 
+
 class ConsumoResponseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Consumo
