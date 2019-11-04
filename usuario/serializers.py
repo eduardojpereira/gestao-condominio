@@ -13,13 +13,12 @@ class UsuarioResponseSerializer(serializers.ModelSerializer):
 
 
 class UsuarioInputSerializer(serializers.Serializer):
-
     nome = serializers.CharField(help_text="Nome do Usuário.")
     sobrenome = serializers.CharField(help_text="Sobrenome do Usuário.")
     apartamento = serializers.CharField(help_text="Apartamento do usuário.")
     cpf = serializers.CharField(help_text="CPF do usuário.")
     email = serializers.CharField(help_text="E-mail do usuário.")
     telefone = serializers.CharField(help_text="Telefone de contato.")
-    data_inicio_moradia = serializers.DateField(help_text='Data entrada ao apartamento.')
-    data_fim_moradia = serializers.DateField(help_text='Data saida do apartamento.')
+    data_inicio_moradia = serializers.CharField(help_text='Data entrada ao apartamento.')
+    data_fim_moradia = serializers.CharField(help_text='Data saida do apartamento.')
     status = serializers.BooleanField(help_text='1 para usuario ativo, 0 para usuario inativo')

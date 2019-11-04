@@ -14,8 +14,8 @@ class UsuarioService:
         usuario.cpf = params['cpf']
         usuario.email = params['email']
         usuario.telefone = params['telefone']
-		usuario.status = params['status']
-		usuario.data_inicio_moradia = params['data_inicio_moradia']
+        usuario.data_inicio_moradia = params['data_inicio_moradia']
+        usuario.status = params['status']
 
         usuario.save()
 

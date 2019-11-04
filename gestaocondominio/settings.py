@@ -41,17 +41,10 @@ INSTALLED_APPS = [
 
     'condominio.apps.CondominioConfig',
     'apartamento.apps.ApartamentoConfig',
-<<<<<<< HEAD
-
-	'usuario.apps.UsuarioConfig',
-	'leitor.apps.LeitorConfig',
-	'bloco.apps.BlocoConfig'
-=======
     'usuario.apps.UsuarioConfig',
     'leitor.apps.LeitorConfig',
     'bloco.apps.BlocoConfig'
 ]
->>>>>>> fd38f15e3d8815145937d7b836e14009d2c370a9
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
