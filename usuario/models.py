@@ -8,8 +8,8 @@ class Usuario(models.Model):
     cpf = models.CharField(max_length=14)
     email = models.CharField(max_length=255)
     telefone = models.CharField(max_length=20)
-    data_inicio_moradia = models.CharField(max_length=10)
-    data_fim_moradia = models.CharField(max_length=10, null=True, blank=True) 
+    data_inicio_moradia = models.DateField()
+    data_fim_moradia = models.DateField(null=True, blank=True) 
     status = models.BooleanField()
 	
 
