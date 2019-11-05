@@ -1,6 +1,7 @@
 from django.db import models
 from apartamento.models import Apartamento
 from datetime import datetime
+from leitor.models import Leitor
 
 
 class Consumo(models.Model):
@@ -15,6 +16,7 @@ class Consumo(models.Model):
     consumo_atual = models.DecimalField(max_digits=11, decimal_places=2)
     valor_gas = models.DecimalField(max_digits=11, decimal_places=2)
     valor_pagamento = models.DecimalField(max_digits=11, decimal_places=2)
+    leitor = models.ForeignKey(Leitor, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'consumo'

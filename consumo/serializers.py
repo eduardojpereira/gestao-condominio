@@ -6,6 +6,7 @@ class ConsumoResponseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Consumo
         fields = ('apartamento',
+                  'leitor',
                   'leitura_atual',
                   'leitura_anterior',
                   'data_leitura_atual',
