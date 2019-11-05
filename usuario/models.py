@@ -9,7 +9,7 @@ class Usuario(models.Model):
     email = models.CharField(max_length=255)
     telefone = models.CharField(max_length=20)
     data_inicio_moradia = models.CharField(max_length=10)
-    data_fim_moradia = models.CharField(max_length=10)
+    data_fim_moradia = models.CharField(max_length=10, null=True, blank=True) 
     status = models.BooleanField()
 	
 
