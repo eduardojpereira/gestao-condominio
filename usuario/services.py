@@ -15,6 +15,7 @@ class UsuarioService:
         usuario.email = params['email']
         usuario.telefone = params['telefone']
         usuario.data_inicio_moradia = params['data_inicio_moradia']
+        usuario.data_fim_moradia = params['data_fim_moradia']
         usuario.status = params['status']
 
         usuario.save()
