@@ -24,10 +24,10 @@ class Consumo(models.Model):
     def __str__(self):
         string = 'Apartamento: ' + str(self.apartamento) + '\n' \
                     'Data da Leitura: ' + str(self.data_leitura_atual) + '\n' \
-                     'Leitura Atual: ' + str(self.leitura_atual) + 'm³ \n' \
+                     'Leitura Atual: ' + str(self.leitura_atual) + '\n' \
                      'Consumo Atual: ' + str(self.consumo_atual) + '\n' \
-                     'Valor do Gás: R$' + str(self.valor_gas) + '/kg \n' \
-                     'Valor a Pagar: R$' + str(self.valor_gas) + '\n'
+                     'Valor do Gás: R$' + str(self.valor_gas) + '\n' \
+                     'Valor a Pagar: R$' + str(self.valor_gas)
         return string
 
     def _periodo_leitura(self):

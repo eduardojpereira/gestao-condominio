@@ -15,3 +15,11 @@ class ConsumoResponseSerializer(serializers.ModelSerializer):
                   'consumo_atual',
                   'valor_gas',
                   'valor_pagamento')
+
+
+class ConsumoInputSerializer:
+
+    apartamento = serializers.CharField(help_text='Número do Apartamento.')
+    leitor = serializers.CharField(help_text='Identificação do Responsável pela Leitura.')
+    leitura_atual = serializers.DecimalField(max_digits=11, decimal_places=2)
+    data_leitura_atual = serializers.DateField(help_text='Data da Leitura.')
