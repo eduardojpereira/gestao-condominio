@@ -36,7 +36,7 @@ class ConsumoViewId(GenericAPIView):
         params = request.data.copy()
         params['id'] = consumo_id
         self.service.update()
-        result = {'data': 'Mendição corrigida com sucesso'}
+        result = {'data': 'Medição corrigida com sucesso'}
         return Response(result)
 
     def delete(self, request, consumo_id):

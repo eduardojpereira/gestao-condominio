@@ -19,7 +19,7 @@ class ConsumoResponseSerializer(serializers.ModelSerializer):
 
 class ConsumoInputSerializer:
 
-    apartamento = serializers.CharField(help_text='Número do Apartamento.')
-    leitor = serializers.CharField(help_text='Identificação do Responsável pela Leitura.')
+    apartamento = serializers.IntegerField(help_text='Id do Apartamento.')
+    leitor = serializers.IntegerField(help_text='Id do Responsável pela Leitura.')
     leitura_atual = serializers.DecimalField(max_digits=11, decimal_places=2)
     data_leitura_atual = serializers.DateField(help_text='Data da Leitura.')

@@ -69,3 +69,18 @@ Para criar um app como o do exemplo acima, basta execupar o seguinte comando (Tr
 $ django-admin startapp apartamento
 ```
 
+### MakeMigration
+
+Após criar/alterar um model, você deve rodar o seguinte comando para que as migrations sejam criadas:
+
+```
+python manage.py makemigrations
+```
+
+### Migrate
+
+Após a criação das migrations, você deve rodar o seguinte comando para que as alterações sejam persistidas no banco de dados:
+
+```
+python manage.py migrate
+```
