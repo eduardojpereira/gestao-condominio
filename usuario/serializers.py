@@ -20,5 +20,5 @@ class UsuarioInputSerializer(serializers.Serializer):
     email = serializers.CharField(help_text="E-mail do usuário.")
     telefone = serializers.CharField(help_text="Telefone de contato.")
     data_inicio_moradia = serializers.CharField(help_text='Data entrada ao apartamento.')
-    data_fim_moradia = serializers.CharField(help_text='Data saida do apartamento.')
+    data_fim_moradia = serializers.CharField(help_text='Data saida do apartamento.', required=False)
     status = serializers.BooleanField(help_text='1 para usuario ativo, 0 para usuario inativo')
