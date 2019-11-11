@@ -1,6 +1,6 @@
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
-from consumo.serializers import ConsumoInputSerializer
+from consumo.serializers import ConsumoInputSerializer, ConsumoUpdateSerializer
 from consumo.serializers import ConsumoResponseSerializer
 from consumo.services import ConsumoService
 
@@ -26,7 +26,7 @@ class ConsumoView(GenericAPIView):
 
 class ConsumoViewId(GenericAPIView):
 
-    serializer_class = ConsumoInputSerializer
+    serializer_class = ConsumoUpdateSerializer
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -36,7 +36,7 @@ class ConsumoViewId(GenericAPIView):
         params = request.data.copy()
         params['id'] = consumo_id
         self.service.update()
-        result = {'data': 'Mendição corrigida com sucesso'}
+        result = {'data': 'Medição corrigida com sucesso'}
         return Response(result)
 
     def delete(self, request, consumo_id):
