@@ -9,3 +9,7 @@
 /.idea/
 /htmlcov/
 gestaocondominio/static/
+__pycache__
+__pycache__/
+**/*__pycache__
+**/migrations/__pycache__
