@@ -15,7 +15,7 @@ class ConsumoService:
         consumo_atual.leitor_id = params['leitor']
         consumo_atual.leitura = params['leitura']
         consumo_atual.data_leitura = params['data_leitura']
-        valor_gas = 1.0
+        valor_gas = 5.3
         consumo_atual.valor_gas = valor_gas
 
         consumo_anterior = self._get_consumo_anterior(consumo_atual)
@@ -43,8 +43,8 @@ class ConsumoService:
         consumo_atual.leitor_id = params['leitor']
         consumo_atual.leitura = params['leitura']
         consumo_atual.data_leitura = params['data_leitura']
-        valor_gas = 1.0
-        consumo_atual.valor_gas = valor_gas = 1.0
+        valor_gas = 5.3
+        consumo_atual.valor_gas = valor_gas
         consumo_atual.periodo_leitura = self._calcular_periodo_leitura(consumo_atual.data_leitura,
                                                                        consumo_anterior.data_leitura)
         consumo_atual.consumo = self._calcular_consumo_atual(consumo_atual.leitura, consumo_anterior.leitura)
