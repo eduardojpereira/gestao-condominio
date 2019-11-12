@@ -26,5 +26,7 @@ urlpatterns = [
     path('v1/condominios/', include('condominio.urls')),
     path('v1/consumo/', include('consumo.urls')),
     path('v1/usuarios/', include('usuario.urls')),
-    path('v1/leitores/', include('leitor.urls'))
+    path('v1/leitores/', include('leitor.urls')),
+    path('v1/blocos/', include('bloco.urls'))
+
 ]
