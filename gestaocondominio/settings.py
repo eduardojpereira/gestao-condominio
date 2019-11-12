@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'consumo.apps.ConsumoConfig',
     'usuario.apps.UsuarioConfig',
     'leitor.apps.LeitorConfig',
+    'gas.apps.GasConfig'
 ]
 
 MIDDLEWARE = [

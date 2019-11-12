@@ -2,7 +2,7 @@ from datetime import datetime
 
 from rest_framework.exceptions import NotFound
 from consumo.models import Consumo
-
+from gas.models import Gas
 
 class ConsumoService:
 
@@ -15,14 +15,16 @@ class ConsumoService:
         consumo_atual.leitor_id = params['leitor']
         consumo_atual.leitura = params['leitura']
         consumo_atual.data_leitura = params['data_leitura']
-        valor_gas = 5.3
-        consumo_atual.valor_gas = valor_gas
+        gas = Gas.objects.last()
+        valor_gas = gas.valor
+        consumo_atual.gas = gas
 
         consumo_anterior = self._get_consumo_anterior(consumo_atual)
         consumo_atual.periodo_leitura = self._calcular_periodo_leitura(consumo_atual.data_leitura,
                                                                        consumo_anterior.data_leitura)
         consumo_atual.consumo = self._calcular_consumo_atual(consumo_atual.leitura, consumo_anterior.leitura)
-        consumo_atual.valor_pagamento = self._calcular_valor_pagamento(consumo_atual.consumo, valor_gas)
+        consumo_atual.valor_pagamento = self._calcular_valor_pagamento(consumo_atual.consumo, valor_gas,
+                                                                       gas.unidade_conversao)
         consumo_atual.consumo_anterior_id = consumo_anterior.id
         consumo_atual.save()
 
@@ -43,12 +45,13 @@ class ConsumoService:
         consumo_atual.leitor_id = params['leitor']
         consumo_atual.leitura = params['leitura']
         consumo_atual.data_leitura = params['data_leitura']
-        valor_gas = 5.3
-        consumo_atual.valor_gas = valor_gas
+        gas = Gas.objects.last()
+        consumo_atual.gas = gas
         consumo_atual.periodo_leitura = self._calcular_periodo_leitura(consumo_atual.data_leitura,
                                                                        consumo_anterior.data_leitura)
         consumo_atual.consumo = self._calcular_consumo_atual(consumo_atual.leitura, consumo_anterior.leitura)
-        consumo_atual.valor_pagamento = self._calcular_valor_pagamento(consumo_atual.consumo, valor_gas)
+        consumo_atual.valor_pagamento = self._calcular_valor_pagamento(consumo_atual.consumo, gas.valor,
+                                                                       gas.unidade_conversao)
         consumo_atual.save(update_fields=['leitor', 'leitura', 'data_leitura', 'periodo_leitura',
                                           'valor_pagamento', 'consumo'])
 
@@ -73,8 +76,7 @@ class ConsumoService:
     def _calcular_consumo_atual(self, leitura_atual, leitura_anterior):
         return leitura_atual - leitura_anterior
 
-    def _calcular_valor_pagamento(self, consumo, valor_gas):
-        unidade_conversao = 2.3
+    def _calcular_valor_pagamento(self, consumo, valor_gas, unidade_conversao):
         consumo_em_kg = consumo * unidade_conversao
 
         return consumo_em_kg * valor_gas
