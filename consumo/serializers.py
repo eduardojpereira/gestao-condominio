@@ -1,16 +1,30 @@
 from rest_framework import serializers
+
 from consumo.models import Consumo
 
 
+class ConsumoAnteriorResponseSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Consumo
+        fields = ('leitura',
+                  'data_leitura',
+                  'periodo_leitura',
+                  'consumo',
+                  'valor_gas',
+                  'valor_pagamento')
+
+
 class ConsumoResponseSerializer(serializers.ModelSerializer):
+    consumo_anterior = ConsumoAnteriorResponseSerializer()
+
     class Meta:
         model = Consumo
         fields = ('apartamento',
                   'leitor',
                   'leitura',
-                  # 'leitura_anterior',
+                  'consumo_anterior',
                   'data_leitura',
-                  # 'data_leitura_anterior',
                   'periodo_leitura',
                   'consumo',
                   'valor_gas',
