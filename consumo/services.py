@@ -17,7 +17,7 @@ class ConsumoService:
         consumo_atual.data_leitura = params['data_leitura']
         gas = Gas.objects.last()
         valor_gas = gas.valor
-        consumo_atual.gas = gas
+        consumo_atual.valor_gas = valor_gas
 
         consumo_anterior = self._get_consumo_anterior(consumo_atual)
         consumo_atual.periodo_leitura = self._calcular_periodo_leitura(consumo_atual.data_leitura,
@@ -46,7 +46,7 @@ class ConsumoService:
         consumo_atual.leitura = params['leitura']
         consumo_atual.data_leitura = params['data_leitura']
         gas = Gas.objects.last()
-        consumo_atual.gas = gas
+        consumo_atual.valor_gas = gas.valor
         consumo_atual.periodo_leitura = self._calcular_periodo_leitura(consumo_atual.data_leitura,
                                                                        consumo_anterior.data_leitura)
         consumo_atual.consumo = self._calcular_consumo_atual(consumo_atual.leitura, consumo_anterior.leitura)
