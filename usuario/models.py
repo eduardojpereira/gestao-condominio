@@ -1,7 +1,9 @@
 from django.db import models
+from django import forms
 
 class Usuario(models.Model):
     id = models.AutoField(primary_key=True)
+    password = forms.CharField(widget=forms.PasswordInput)
     nome = models.CharField(max_length=255)
     sobrenome = models.CharField(max_length=255)
     apartamento = models.ForeignKey('apartamento.Apartamento', on_delete=models.CASCADE)
@@ -15,6 +17,7 @@ class Usuario(models.Model):
 
     class Meta:
         db_table = 'usuario'
+        model = Usuario
 
     def __str__(self):
         return 'Nome: ' + str(self.nome)
