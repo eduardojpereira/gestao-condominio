@@ -5,7 +5,9 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
-autopep8 = "*"
+flake8 = "==3.6.0"
+model-mommy = "==1.6.0"
+coverage = "==4.5.4"
 
 [packages]
 django = "*"
@@ -13,4 +15,4 @@ djangorestframework = "*"
 coreapi = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"
