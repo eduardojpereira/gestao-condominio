@@ -9,3 +9,6 @@ class BlocoResponseSerializer(serializers.ModelSerializer):
         fields = ('id', 'nome')
 
 
+class BlocoInputSerializer(serializers.Serializer):
+    nome = serializers.CharField(help_text='Nome do Bloco.')
+
