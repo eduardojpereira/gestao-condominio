@@ -47,15 +47,47 @@ python manage.py createsuperuser
 ```
 
 Rode esse comando para subir o servidor:
-```
-python manage.py runserver
-```
+
+`python manage.py runserver`
+
+or
+
+`make run-server`
 
 Acesse no navegador a url: http://localhost:8000
+
 
 Depois tente acessar e logar no Django Admin com o usuário e senha criado acima: http://localhost:8000/admin/
 
 A documentação do projeto se encontra em: http://localhost:8000/docs
+
+## Testes
+
+Para rodar os testes do projeto, execute:
+
+`python manage.py test --settings=gestaocondominio.settings.testing`
+
+or
+
+`make test`
+
+## Coverage
+
+`coverage run --source='.' manage.py test --settings=gestaocondominio.settings.testing`
+
+or
+
+`make coverage`
+
+### Testes de estilo de codificação
+
+Para verificar o que não está seguindo os padrões de codificação, execute:
+
+`flake8 & pycodestyle`
+
+or
+
+`make code-convention`
 
 ### Orientação
 

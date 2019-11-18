@@ -23,7 +23,7 @@ class CondominioView(GenericAPIView):
     def post(self, request):
         params = request.data.copy()
         self.service.insert(params)
-        result = {'data': 'Condomínio inserido com sucesso'}
+        result = {'detail': 'Condomínio inserido com sucesso'}
 
         return Response(result)
 
@@ -40,14 +40,14 @@ class CondominioViewId(GenericAPIView):
         params['id'] = condominio_id
         self.service.update(params)
 
-        result = {'data': 'Condomínio atualizado com sucesso'}
+        result = {'detail': 'Condomínio atualizado com sucesso'}
 
         return Response(result)
 
     def delete(self, request, condominio_id):
         self.service.delete(condominio_id)
 
-        result = {'data': 'Condomínio deletado com sucesso'}
+        result = {'detail': 'Condomínio deletado com sucesso'}
 
         return Response(result)
 
