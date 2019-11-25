@@ -1,12 +1,11 @@
 from django.db import models
-from apartamento.models import Apartamento
+
 from leitor.models import Leitor
-from gas.models import Gas
 
 
 class Consumo(models.Model):
     id = models.AutoField(primary_key=True)
-    apartamento = models.ForeignKey(Apartamento, on_delete=models.CASCADE)
+    apartamento = models.ForeignKey('apartamento.Apartamento', on_delete=models.CASCADE)
     leitura = models.DecimalField(max_digits=11, decimal_places=2)
     data_leitura = models.DateField()
     periodo_leitura = models.IntegerField()
