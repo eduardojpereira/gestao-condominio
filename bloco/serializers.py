@@ -11,4 +11,4 @@ class BlocoResponseSerializer(serializers.ModelSerializer):
 
 class BlocoInputSerializer(serializers.Serializer):
     nome = serializers.CharField(help_text='Nome do Bloco.')
-
+    condominio = serializers.IntegerField(help_text='Id do condomínio')
