@@ -21,7 +21,7 @@ class BlocoView(GenericAPIView):
         params = request.data.copy()
         self.service.insert(params)
 
-        result = {'data': 'Bloco Cadastrado!'}
+        result = {'detail': 'Bloco Cadastrado!'}
         return Response(result)
 
 
