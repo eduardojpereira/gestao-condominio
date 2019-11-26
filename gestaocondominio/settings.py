@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'user.User'
 
 # Application definition
 INSTALLED_APPS = [
@@ -41,7 +42,7 @@ INSTALLED_APPS = [
 
     'condominio.apps.CondominioConfig',
     'apartamento.apps.ApartamentoConfig',
-    'usuario.apps.UsuarioConfig',
+    'user.apps.UserConfig',
     'leitor.apps.LeitorConfig',
     'bloco.apps.BlocoConfig'
 ]

@@ -24,6 +24,6 @@ urlpatterns = [
                                     permission_classes=[])),
     path('v1/apartamentos/', include('apartamento.urls')),
     path('v1/condominios/', include('condominio.urls')),
-    path('v1/usuarios/', include('usuario.urls')),
+    path('v1/usuarios/', include('user.urls')),
     path('v1/leitores/', include('leitor.urls'))
 ]
