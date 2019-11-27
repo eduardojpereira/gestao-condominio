@@ -25,28 +25,26 @@ class TestBlocoAPI(CustomAPITestCase):
 
         response = self.send_post(path=self.path, data=data)
 
-        self.assertResponse(response, status.HTTP_200_OK, 'Bloco Cadastrado!')
+        self.assertResponse(response, status.HTTP_200_OK, 'Bloco inserido com sucesso')
 
-    # def test_put__success(self):
-    #     self._create_bloco_fixtures()
-    #
-    #     novos_dados_do_bloco = dict(numero=206, esta_disponivel=True, bloco=2)
-    #
-    #     bloco_id = 1
-    #     bloco_antes_do_update = Bloco.objects.get(id=bloco_id)
-    #     self.assertNotEqual(novos_dados_do_bloco['numero'], bloco_antes_do_update.numero)
-    #     self.assertNotEqual(novos_dados_do_bloco['esta_disponivel'], bloco_antes_do_update.esta_disponivel)
-    #     self.assertNotEqual(novos_dados_do_bloco['bloco'], bloco_antes_do_update.bloco_id)
-    #
-    #     url = f'{self.path}{bloco_id}/'
-    #     response = self.client.put(path=url, data=novos_dados_do_bloco)
-    #
-    #     self.assertResponse(response, status.HTTP_200_OK, 'Bloco atualizado com sucesso')
-    #
-    #     bloco_depois_do_update = Bloco.objects.get(id=bloco_id)
-    #     self.assertEqual(novos_dados_do_bloco['numero'], bloco_depois_do_update.numero)
-    #     self.assertEqual(novos_dados_do_bloco['esta_disponivel'], bloco_depois_do_update.esta_disponivel)
-    #     self.assertEqual(novos_dados_do_bloco['bloco'], bloco_depois_do_update.bloco_id)
+    def test_put__success(self):
+        self._create_bloco_fixtures()
+
+        novos_dados_do_bloco = dict(nome='bloco 3', condominio=2)
+
+        bloco_id = 1
+        bloco_antes_do_update = Bloco.objects.get(id=bloco_id)
+        self.assertNotEqual(novos_dados_do_bloco['nome'], bloco_antes_do_update.nome)
+        self.assertNotEqual(novos_dados_do_bloco['condominio'], bloco_antes_do_update.condominio_id)
+
+        url = f'{self.path}{bloco_id}/'
+        response = self.client.put(path=url, data=novos_dados_do_bloco)
+
+        self.assertResponse(response, status.HTTP_200_OK, 'Bloco atualizado com sucesso')
+
+        bloco_depois_do_update = Bloco.objects.get(id=bloco_id)
+        self.assertEqual(novos_dados_do_bloco['nome'], bloco_depois_do_update.nome)
+        self.assertEqual(novos_dados_do_bloco['condominio'], bloco_depois_do_update.condominio_id)
 
     def test_get__success(self):
         self._create_bloco_fixtures()
@@ -61,33 +59,33 @@ class TestBlocoAPI(CustomAPITestCase):
         blocos_esperados = Bloco.objects.filter(id__in=[1, 2])
         json_esperado = BlocoResponseSerializer(blocos_esperados, many=True).data
         self.assertEqual(obtained_data, json_esperado)
-    #
-    # def test_get_by_id__success(self):
-    #     self._create_bloco_fixtures()
-    #
-    #     bloco_id = 1
-    #
-    #     url = f'{self.path}{bloco_id}/'
-    #     response = self.client.get(url)
-    #
-    #     self.assertResponse(response, status.HTTP_200_OK)
-    #
-    #     obtained = response.data
-    #     self.assertTrue(obtained)
-    #
-    #     bloco_esperado = Bloco.objects.get(id=bloco_id)
-    #     json_esperado = BlocoResponseSerializer(bloco_esperado).data
-    #     self.assertEqual(obtained, json_esperado)
-    #
-    # def test_delete__success(self):
-    #     self._create_bloco_fixtures()
-    #
-    #     bloco_id = 1
-    #     self.assertTrue(Bloco.objects.filter(id=bloco_id).exists())
-    #
-    #     url = f'{self.path}{bloco_id}/'
-    #     response = self.client.delete(url)
-    #
-    #     self.assertResponse(response, status.HTTP_200_OK, 'Bloco deletado com sucesso')
-    #
-    #     self.assertFalse(Bloco.objects.filter(id=bloco_id).exists())
+
+    def test_get_by_id__success(self):
+        self._create_bloco_fixtures()
+
+        bloco_id = 1
+
+        url = f'{self.path}{bloco_id}/'
+        response = self.client.get(url)
+
+        self.assertResponse(response, status.HTTP_200_OK)
+
+        obtained = response.data
+        self.assertTrue(obtained)
+
+        bloco_esperado = Bloco.objects.get(id=bloco_id)
+        json_esperado = BlocoResponseSerializer(bloco_esperado).data
+        self.assertEqual(obtained, json_esperado)
+
+    def test_delete__success(self):
+        self._create_bloco_fixtures()
+
+        bloco_id = 1
+        self.assertTrue(Bloco.objects.filter(id=bloco_id).exists())
+
+        url = f'{self.path}{bloco_id}/'
+        response = self.client.delete(url)
+
+        self.assertResponse(response, status.HTTP_200_OK, 'Bloco deletado com sucesso')
+
+        self.assertFalse(Bloco.objects.filter(id=bloco_id).exists())

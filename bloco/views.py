@@ -21,7 +21,7 @@ class BlocoView(GenericAPIView):
         params = request.data.copy()
         self.service.insert(params)
 
-        result = {'detail': 'Bloco Cadastrado!'}
+        result = {'detail': 'Bloco inserido com sucesso'}
         return Response(result)
 
 
@@ -38,14 +38,14 @@ class BlocoViewId(GenericAPIView):
 
         self.service.update(params)
 
-        result = {'data': 'Bloco atualizado com sucesso!'}
+        result = {'detail': 'Bloco atualizado com sucesso'}
 
         return Response(result)
 
     def delete(self, request, bloco_id):
         self.service.delete(bloco_id)
 
-        result = {'data': 'Bloco deletado com Sucesso'}
+        result = {'detail': 'Bloco deletado com sucesso'}
 
         return Response(result)
 
