@@ -9,8 +9,10 @@
 /.idea/
 /htmlcov/
 gestaocondominio/static/
+venv/
 __pycache__
 __pycache__/
 **/*__pycache__
 **/migrations/__pycache__
 .coverage
+
