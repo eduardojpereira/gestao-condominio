@@ -22,6 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ALLOWED_HOSTS = ['*']
 
+AUTH_USER_MODEL = 'user.User'
 
 # Application definition
 INSTALLED_APPS = [
@@ -39,7 +40,7 @@ INSTALLED_APPS = [
 
     'condominio.apps.CondominioConfig',
     'apartamento.apps.ApartamentoConfig',
-    'usuario.apps.UsuarioConfig',
+    'user.apps.UserConfig',
     'leitor.apps.LeitorConfig',
 <<<<<<< HEAD:gestaocondominio/settings.py
     'bloco.apps.BlocoConfig'
