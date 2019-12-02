@@ -6,7 +6,7 @@ from apartamento.models import Apartamento
 class ApartamentoResponseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Apartamento
-        fields = ('bloco', 'numero', 'esta_disponivel')
+        fields = ('id', 'bloco', 'numero', 'esta_disponivel')
 
 
 class ApartamentoInputSerializer(serializers.Serializer):
