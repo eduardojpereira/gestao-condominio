@@ -19,13 +19,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'pqcz=a(v(s%g#2(@$p9a+xrivqgeeqc+1x&g%qy!p-a1cd+y&n'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'user.User'
 
@@ -38,16 +33,24 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Django CORS headers
+    'corsheaders',
+
     'rest_framework',
 
     'condominio.apps.CondominioConfig',
     'apartamento.apps.ApartamentoConfig',
     'user.apps.UserConfig',
     'leitor.apps.LeitorConfig',
+<<<<<<< HEAD:gestaocondominio/settings.py
     'bloco.apps.BlocoConfig'
+=======
+    'gas.apps.GasConfig'
+>>>>>>> 9959b6dcdda867a6ea01fc765c6e729618fbdf18:gestaocondominio/settings/common.py
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -76,17 +79,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'gestaocondominio.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation
@@ -121,6 +113,19 @@ USE_L10N = True
 
 USE_TZ = True
 
+# CORS
+# https://github.com/ottoyiu/django-cors-headers
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'http://localhost:8001',
+    'http://127.0.0.1:8001',
+    'http://0.0.0.0:8001',
+    'http://localhost:8080',
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -131,5 +136,12 @@ REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
     ),
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.JSONParser',
+    ),
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication'
+    ),
 }
