@@ -32,6 +32,7 @@ class ConsumoService:
         consumo_anterior = Consumo.objects.filter(apartamento_id=consumo_atual.apartamento_id).order_by('id').last()
 
         if consumo_anterior:
+            consumo_anterior.data_leitura = consumo_anterior.data_leitura.strftime('%Y-%m-%d')
             return consumo_anterior
 
         return consumo_atual

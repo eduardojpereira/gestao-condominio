@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -121,6 +121,7 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:8001',
     'http://127.0.0.1:8001',
     'http://0.0.0.0:8001',
+    'http://localhost:8080',
 ]
 
 # Static files (CSS, JavaScript, Images)
