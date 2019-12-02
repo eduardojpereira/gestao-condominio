@@ -42,11 +42,8 @@ INSTALLED_APPS = [
     'apartamento.apps.ApartamentoConfig',
     'user.apps.UserConfig',
     'leitor.apps.LeitorConfig',
-<<<<<<< HEAD:gestaocondominio/settings.py
-    'bloco.apps.BlocoConfig'
-=======
+    'bloco.apps.BlocoConfig',
     'gas.apps.GasConfig'
->>>>>>> 9959b6dcdda867a6ea01fc765c6e729618fbdf18:gestaocondominio/settings/common.py
 ]
 
 MIDDLEWARE = [
